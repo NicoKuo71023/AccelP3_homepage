@@ -1,0 +1,285 @@
+$color_black: #e2efed
+$main_orange: #f27100
+$light_orange: #ff9300
+$main_grey: #5E5E5E
+$light_grey: #d6d6d6
+
+$dark_blue: #0b4967
+$dark_green: #3e9da7
+$bgc_white: #f1fdf9
+$light_green: #9acbc7
+$light_blue: rgba(12,75,104,0.3)
+*
+  position: relative
+
+
+body, html
+  padding: 0
+  margin: 0 
+  align-items: center
+  font-family: Arial, sans-serif
+
+nav
+  background-color: rgba(255, 255, 255, 0.8)
+  transition:0.3s
+    // margin: auto
+.navbar-top
+  background-color: rgba(255, 255, 255, 0)
+  color: white
+.navbar
+  padding: 24px
+  border-bottom: white
+  .navbar-collapse.collapse
+    .search-bar
+      background-color: rgba(255, 255, 255, 0)
+      width: 400px
+      margin-left: 48px
+      border: solid 1px $light_grey
+      transition: 0.1s
+      caret-color: white
+      &:hover
+        background-color: rgba(255, 255, 255, 0.1)
+      &.scrolled
+        border-color: $color_black
+        caret-color: $color_black
+
+    input::placeholder
+      color: $light_grey
+    input.scrolled::placeholder
+      color: $main_grey// 滾動時的 placeholder 顏色
+    input:focus 
+      outline: none 
+      box-shadow: 0 0 5px rgba(255, 147, 0, 0) 
+    //   border-color: rgba(255, 147, 0, 0.5) 
+    input:focus::placeholder 
+       opacity: 0 /* 聚焦時隱藏 placeholder */
+
+
+    ul
+      padding: 0px 36px
+      margin-left: 0
+    .nav-item
+      padding: 0px 16px
+      a
+        color: $dark_blue
+        transition: 0.3s
+      a.fontcolor_black
+        color: black
+      &:hover
+        a
+          color: $dark_green
+  .logo
+    margin: auto
+    // color : 
+    padding: 0px 48px 0px 24px
+    border-right: solid 2px $main_grey
+    .logo_left
+      color : $dark_blue
+    .logo_right
+      color : $dark_green
+    span
+      transition: 0.3s
+
+.jumbotron
+  padding: 320px 0px 
+  position: relative
+  width: 100%
+  
+  background-image: url(https://i.imgur.com/fU6PBDM.png) 
+  background-size: cover 
+  background-attachment: fixed
+  background-position: center -400px
+  display: flex
+  justify-content: center
+  align-items: center
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(244, 255, 250, 0.5) // 調整透明度以控制亮度
+    z-index: 1
+  .header_slogan_L
+    // font-style: italic
+    color: $dark_green
+    z-index: 4
+  
+  .header_slogan_s 
+    margin: 16px 0px
+    color: $dark_blue
+    font-size: 1.2rem
+    z-index: 4
+  .btn
+    background-color: $dark_blue
+    border: none
+    font-size: 0.8rem
+    padding: 8px 12px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 0
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.2) // 改成你想要的 hover 顏色
+      transition: width 0.2s ease // 控制動畫效果
+      z-index: 4
+
+    &:hover::before 
+      width: 100% 
+    position: relative
+    z-index: 1
+    
+section
+  background-color: $color_black
+  // border: solid 1px white
+  padding: 48px 0px
+  .container
+    // border: solid 1px
+    // padding: 160px 0px
+  .col-md-10
+    text-align: center
+    color: white
+    
+    .row
+      padding: 20px 0px
+      text-align: left
+      // background-color: red
+      // border: solid 1px red
+      position: relative
+    .col-md-6
+      // padding-top: 4rem
+      // .info_bottom
+      //   padding-top: 24px
+      .icon-wrapper
+        min-width: 72px
+        // height: 70px
+        padding: 24px
+        border-radius: 8px
+        background-color: $dark_green
+        i.text-white
+          font-size: 2.2rem
+          color: $bgc_white 
+          
+    p.mb-0
+        font-size: 0.8rem
+#project
+  background-color: $dark_blue
+#market
+  // background-color: black
+  
+  text-align: center
+  background: url('https://i.imgur.com/fU6PBDM.png') no-repeat center center/cover
+  background-attachment: fixed
+  // background-color: black
+  color: $dark_blue
+  padding: 50px 0
+  hr
+    width: 72px
+    margin-left: auto
+    margin-right: auto
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(244, 255, 250, 0.7) // 調整透明度以控制亮度
+    z-index: 1
+  h1
+    z-index: 2
+    padding: 32px
+  .stat-item 
+    z-index: 2
+    .stat-number 
+      font-size: 4rem
+      color: $dark_green // 自定義數字顏色
+    .stat-description
+      padding: 16px
+.photo-section 
+  background-color: $color_black
+  color: #fff
+  text-align: center
+  padding: 48px 0 0 0 
+
+  h2 
+    padding-bottom: 32px
+  
+  .photo-gallery 
+    display: flex
+    justify-content: space-between
+    gap: 0 // 無間距以100%塞滿
+    padding: 0 
+
+    .photo-item 
+      flex: 1 // 每個圖片項目平均分配空間
+      position: relative // 確保偽元素相對於父元素定位
+      overflow: hidden
+
+      img 
+        width: 100%
+        height: 220px
+        display: block
+        object-fit: cover // 保持圖片比例，填滿容器
+        object-position: center
+
+      &::before 
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.7) // 黑色半透明遮罩
+        opacity: 0 // 初始狀態隱藏遮罩
+        transition: opacity 0.3s // 過渡效果
+        z-index: 4
+      &:hover::before
+        opacity: 1 // hover 時顯示遮罩
+      &::after
+        content: attr(title) // 顯示遊戲名稱
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) // 置中顯示
+        color: #fff
+        font-size: 1.2rem
+        font-weight: bold
+        text-align: center
+        opacity: 0 // 初始狀態隱藏文字
+        transition: opacity 0.3s
+        z-index: 5
+      &:hover::after
+        opacity: 1 // hover 時顯示文字
+.footer
+  background-color: $dark_green
+  height: 100%
+  font-size: 0.8rem
+  color: white
+  padding: 48px 0px 32px 0px
+  position: relative
+  font-size: 0.8rem
+  .col-md-4
+    display: flex
+    justify-content: flex-end
+    // border: solid 1px
+    align-items: center
+    a
+      color: white
+      
+      
+    .fa-chevron-right
+      font-size: 1rem
+      display: inline-block
+      // border: solid 1px
+      padding: 0px 32px
+      // // 向上箭頭
+      transform: rotate(90deg)
+      transition: 0.1s
+      &:hover
+        transform: rotate(270deg)
+#top
+  // display: none
